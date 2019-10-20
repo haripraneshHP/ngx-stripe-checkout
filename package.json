@@ -1,0 +1,21 @@
+{
+    "name": "ngx-stripe-checkout",
+    "exportName": "Stripe Checkout Angular",
+    "version": "1.0.0",
+    "peerDependencies": {
+        "@angular/common": "^4.2.4",
+        "@angular/core": "^4.2.4"
+    },
+    "ngPackage": {
+        "lib": {
+            "entryFile": "src/public_api.ts"
+        },
+        "dest": "dist"
+    },
+    "keywords": [
+        "angular",
+        "stripe",
+        "checkout",
+        "stripe client integration"
+    ]
+}
