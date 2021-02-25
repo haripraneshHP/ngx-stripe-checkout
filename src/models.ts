@@ -31,3 +31,7 @@ export interface OnetimeItem {
     sku: string,     // plan id or sku id
     quantity: number
 }
+
+export interface sessionOptions {
+    id: string
+}
