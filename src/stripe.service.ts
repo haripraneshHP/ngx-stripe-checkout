@@ -1,6 +1,6 @@
 // imports
 import { Injectable } from '@angular/core';
-import { OnetimeCheckoutOptions, RecurringCheckoutOptions } from './models';
+import { OnetimeCheckoutOptions, RecurringCheckoutOptions, sessionOptions } from './models';
 
 // variables
 declare var Stripe: any; // Stripe checkout
@@ -119,4 +119,18 @@ export class StripeCheckoutService {
             }
         });
     }
+
+    openClientServerSession(checkoutOptions:sessionOptions): Promise<string>{
+        return new Promise((resolve, reject) => {
+            this.stripe.redirectToCheckout({
+                sessionId: checkoutOptions.id
+            }).then(function (result) {
+                if (result.error)
+                    reject(result.error)
+                else
+                    resolve(result)
+            });
+        })
+    }
+
 }
